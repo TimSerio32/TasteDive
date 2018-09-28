@@ -1,4 +1,4 @@
-package serio.tim.android.com.tastedive
+package serio.tim.android.com.tastedive.retrofit
 
 import io.reactivex.Single
 import retrofit2.http.GET

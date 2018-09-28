@@ -1,4 +1,4 @@
-package serio.tim.android.com.tastedive
+package serio.tim.android.com.tastedive.main
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider

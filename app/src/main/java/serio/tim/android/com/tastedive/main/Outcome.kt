@@ -1,4 +1,4 @@
-package serio.tim.android.com.tastedive
+package serio.tim.android.com.tastedive.main
 
 sealed class Outcome<T> {
     data class Progress<T>(var loading: Boolean) : Outcome<T>()

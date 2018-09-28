@@ -1,4 +1,4 @@
-package serio.tim.android.com.tastedive
+package serio.tim.android.com.tastedive.main
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -8,6 +8,9 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
+import serio.tim.android.com.tastedive.constants.Constants
+import serio.tim.android.com.tastedive.R
+import serio.tim.android.com.tastedive.retrofit.TasteDiveAdapter
 import java.util.LinkedHashMap
 
 class MainActivity : AppCompatActivity() {

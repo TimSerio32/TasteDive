@@ -1,4 +1,4 @@
-package serio.tim.android.com.tastedive
+package serio.tim.android.com.tastedive.retrofit
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater

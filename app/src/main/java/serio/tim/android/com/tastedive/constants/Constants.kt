@@ -1,4 +1,4 @@
-package serio.tim.android.com.tastedive
+package serio.tim.android.com.tastedive.constants
 
 object Constants {
     val API_URL = "https://www.tastedive.com/api/"

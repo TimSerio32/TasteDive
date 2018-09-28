@@ -1,4 +1,4 @@
-package serio.tim.android.com.tastedive
+package serio.tim.android.com.tastedive.retrofit
 
 data class Info(
         val Name: String,
