@@ -8,22 +8,11 @@ import serio.tim.android.com.tastedive.constants.Constants
 import serio.tim.android.com.tastedive.retrofit.TasteDive
 import serio.tim.android.com.tastedive.retrofit.TasteDiveClient
 import java.util.LinkedHashMap
+import javax.inject.Inject
 
-class MainRepository {
-
-    private var retrofit: Retrofit? = null
-
-    fun getRetrofit(): Retrofit? {
-        if(retrofit == null) {
-            retrofit = Retrofit.Builder()
-                    .baseUrl(Constants.API_URL)
-                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .addConverterFactory(GsonConverterFactory.create()).build()
-        }
-        return retrofit
-    }
+class MainRepository @Inject constructor(val retrofit: Retrofit) {
 
     fun getSimilarData(map: LinkedHashMap<String, String>): Single<TasteDive>? {
-        return getRetrofit()?.create(TasteDiveClient::class.java)?.getSimilarData(map)
+        return retrofit.create(TasteDiveClient::class.java).getSimilarData(map)
     }
 }

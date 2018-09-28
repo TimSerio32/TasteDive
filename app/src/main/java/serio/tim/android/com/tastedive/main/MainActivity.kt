@@ -10,18 +10,22 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import serio.tim.android.com.tastedive.constants.Constants
 import serio.tim.android.com.tastedive.R
+import serio.tim.android.com.tastedive.application.TasteDiveApplication
 import serio.tim.android.com.tastedive.retrofit.TasteDiveAdapter
 import java.util.LinkedHashMap
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    private val viewModelFactory = MainViewModelFactory()
+    @Inject
+    lateinit var viewModelFactory: MainViewModelFactory
 
     private val viewModel: MainViewModel by lazy {
         ViewModelProviders.of(this, viewModelFactory).get(MainViewModel::class.java)
     }
 
-    private var tasteDiveAdapter = TasteDiveAdapter()
+    @Inject
+    lateinit var tasteDiveAdapter: TasteDiveAdapter
 
     private val spinnerItems: List<String> = Constants.SPINNER_ITEMS
 
@@ -30,6 +34,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        (application as TasteDiveApplication).appComponent.inject(this)
 
         progress_loadingIndicator.hide()
 

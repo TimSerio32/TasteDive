@@ -8,15 +8,9 @@ import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 import serio.tim.android.com.tastedive.retrofit.Result
 import serio.tim.android.com.tastedive.retrofit.TasteDive
+import javax.inject.Inject
 
-class MainViewModel: ViewModel() {
-
-    private var repository = MainRepository()
-
-    private var arrayList: ArrayList<Result> = ArrayList()
-
-    private var outcomeObservable = MutableLiveData<Outcome<ArrayList<Result>>>()
-
+class MainViewModel @Inject constructor(val repository: MainRepository, val arrayList: ArrayList<Result>, val outcomeObservable: MutableLiveData<Outcome<ArrayList<Result>>>): ViewModel() {
     fun getOutcomeObservable(): LiveData<Outcome<ArrayList<Result>>> = outcomeObservable
 
     fun getSimilarData(map: LinkedHashMap<String, String>) {
