@@ -7,7 +7,7 @@ import serio.tim.android.com.tastedive.main.MainRepository
 import serio.tim.android.com.tastedive.main.MainViewModelFactory
 import serio.tim.android.com.tastedive.main.Outcome
 import serio.tim.android.com.tastedive.retrofit.Result
-import serio.tim.android.com.tastedive.retrofit.TasteDiveAdapter
+import serio.tim.android.com.tastedive.main.TasteDiveAdapter
 import javax.inject.Singleton
 
 @Module
